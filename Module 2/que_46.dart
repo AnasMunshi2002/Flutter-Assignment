@@ -10,6 +10,18 @@ void main(){
 
   try {
     print('String at $index in list = ${names[index]}');
+
+    stdout.write('Enter name to check the existence in list : ');
+    String name = stdin.readLineSync().toString();
+
+    if(names.contains(name)){
+      print('Names list contains the entered name ');
+    }
+    else{
+      print('The entered name is not present ');
+    }
+    names.add(name);
+    print(names);
   }on RangeError{
     print('Invalid index number');
   }
